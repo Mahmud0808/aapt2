@@ -149,7 +149,9 @@ add_library(libaapt2 STATIC
 
   target_include_directories(libaapt2 PRIVATE ${INCLUDES})
   target_compile_options(libaapt2 PRIVATE ${COMPILE_FLAGS})
-
+  
+  target_link_options(libaapt2 PRIVATE "-Wl,-z,max-page-size=16384")
+  
   add_executable(aapt2
   ${SRC}/base/tools/aapt2/Main.cpp
   ${TOOL_SOURCE})
@@ -179,3 +181,5 @@ add_library(libaapt2 STATIC
   c++_static
   z
   dl)
+  
+  target_link_options(aapt2 PRIVATE "-Wl,-z,max-page-size=16384")

@@ -34,3 +34,4 @@ target_include_directories(libutils PRIVATE
     ${SRC}/binder/include
     )
     
+target_link_options(libutils PRIVATE "-Wl,-z,max-page-size=16384")

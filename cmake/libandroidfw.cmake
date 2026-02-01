@@ -58,3 +58,5 @@ target_link_libraries(libandroidfw PUBLIC
     fmt::fmt
     libpng
     )
+
+target_link_options(libandroidfw PRIVATE "-Wl,-z,max-page-size=16384")
